@@ -39,9 +39,9 @@ io.on("connection", socket => {
 });
 
 if (process.env.PROD){
-    app.use(express.static(path.join(_dirname, './client/build')));
+    app.use(express.static(path.join(process.cwd(), './client/build')));
     app.get( '*', (req, res) => {
-        res.sendFile(path.join(_dirname, './client/build/index.html'));
+        res.sendFile(path.join(process.cwd(), './client/build/index.html'));
 
     });
 
