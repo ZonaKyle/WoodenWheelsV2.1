@@ -123,10 +123,24 @@ const Room = (props) => {
         partnerVideo.current.srcObject = e.streams[0];
     };
 
+    function switchStream(){
+        if (userVideo.current.srcObject = stream) {
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BpR1Ds9TsrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            //<embed type="video/webm" src="http://localhost:8000"></embed>       
+        } else {
+            userVideo
+        };
+
+    }
+
     return (
         <div>
-            <video autoPlay ref={userVideo} />
+            <video autoPlay ref={switchStream} />
             <video autoPlay ref={partnerVideo} />
+
+            <button class="app_button" onclick={
+            }>WW APP STREAM</button>
+
         </div>
     );
 };
