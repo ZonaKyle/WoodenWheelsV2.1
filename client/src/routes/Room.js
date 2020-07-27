@@ -8,7 +8,6 @@ const Room = (props) => {
     const socketRef = useRef();
     const otherUser = useRef();
     const userStream = useRef();
-    const whichStream = userVideo;
 
     useEffect(() => {
         navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(stream => {
@@ -124,26 +123,10 @@ const Room = (props) => {
         partnerVideo.current.srcObject = e.streams[0];
     };
 
-    function switchStream(){
-        if (whichStream = userVideo) {
-            whichStream=
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/BpR1Ds9TsrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            //<embed type="video/webm" src="http://localhost:8000"></embed>       
-        } else {
-            whichStream = userVideo
-        };
-
-    }
-
     return (
         <div>
-            <video autoPlay ref={whichStream} />
+            <video autoPlay ref={userVideo} />
             <video autoPlay ref={partnerVideo} />
-
-            <button class="app_button" onclick= {
-                switchStream() 
-            }>WW APP STREAM</button>
-
         </div>
     );
 };
